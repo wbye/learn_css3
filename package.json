@@ -1,0 +1,24 @@
+{
+  "name": "learn_css3",
+  "version": "1.0.0",
+  "description": "learn css3",
+  "main": "index.js",
+  "dependencies": {
+    "browser-sync": "^2.7.7",
+    "gulp": "^3.9.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wbye/learn_css3.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wbye/learn_css3/issues"
+  },
+  "homepage": "https://github.com/wbye/learn_css3"
+}
