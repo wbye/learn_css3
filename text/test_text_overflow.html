@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		.demo{
+			width: 100px;
+			height: 100px;
+			border: 1px solid #000;
+		}
+		.demo1{
+			text-overflow:ellipsis;
+			overflow: hidden;
+			white-space: nowrap;
+		}
+
+	</style>
+</head>
+<body>
+	<pre>但是text-overflow只是用来说明文字溢出时用什么方式显示，要实现溢出时产生省略号的效果，还须定义强制文本在一行内显示（white-space:nowrap）及溢出内容为隐藏（overflow:hidden），只有这样才能实现溢出文本显示省略号的效果，代码如下：
+text-overflow:ellipsis; 
+overflow:hidden; 
+white-space:nowrap; </pre>
+	<div class="demo demo1">这是一段很长的文字这是一段很长的文字这是一段很长的文字这是一段很长的文字这是一段很长的文字这是一段很长的文字这是一段很长的文字</div>
+
+</body>
+</html>

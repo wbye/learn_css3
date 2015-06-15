@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		.demo,.demo-warpper{
+			display: inline-block;
+			width: 500px;
+			height: 500px;
+			/*background: url(../images/border.png);*/
+		}
+		.demo-warpper{
+			overflow: hidden;
+			width: 500px;
+			height: 500px;
+		}
+		.demo-rotate.demo{
+			width: 600px;
+			height: 600px;
+		}
+		.demo1{
+			background: linear-gradient(0,red,blue);
+		}
+		.demo2{
+			background: linear-gradient(20deg,red,blue);
+		}
+		.demo3{
+			background: linear-gradient(30deg,red,blue);
+		}
+		.demo4{
+			background: linear-gradient(40deg,red,blue);
+		}
+		.demo-rotate{
+			background:  linear-gradient(0,red,blue);
+			transform:rotate(10deg);
+			transform:scale(1.2);
+		}
+		.demo5{
+			background: linear-gradient(40deg,rgba(255,0,0,0.3) ,blue), url(../images/border.png);
+		}
+		.demo6{
+			background: linear-gradient(90deg,red 40%,green,blue);
+		}
+	</style>
+</head>
+<body>
+	<div class="demo demo1"></div>
+	<div class="demo demo2"></div>
+	<div class="demo demo3"></div>
+	<div class="demo demo4"></div>
+	<div class="demo-warpper">
+		<div class="demo demo-rotate"></div>
+	</div>
+	<div class="demo demo5"></div>
+	<div class="demo demo6"></div>
+</body>
+</html>
