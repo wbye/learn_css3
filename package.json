@@ -1,0 +1,24 @@
+{
+  "name": "learn_css3",
+  "version": "1.0.0",
+  "description": "learn css3",
+  "main": "bs-config.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wbye/learn_css3.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wbye/learn_css3/issues"
+  },
+  "homepage": "https://github.com/wbye/learn_css3#readme",
+  "dependencies": {
+    "gulp": "^3.9.0",
+    "gulp-postcss": "^6.0.1"
+  }
+}

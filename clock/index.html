@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>clock</title>
+    <style type="text/css">
+        #clock{
+            margin-top: 200px;
+            text-align: center;
+        }
+        #panel{
+            position: relative;
+            margin: 0 auto;
+            height: 400px;
+            width: 400px;
+            border: 1px solid #000;
+            border-radius: 200px;
+        }
+        #hour,#minute,#second{
+            display: inline-block;
+            position: absolute;
+            left: 50%;
+            top:50%;
+            background:#000;
+            transform-origin: left center;
+            transform: rotateZ(-90deg);
+        }
+        #hour{
+            width: 60px;
+            height:2px;
+        }
+        #minute{
+            width: 100px;
+            height: 2px;
+        }
+        #second{
+            width: 150px;
+            height: 2px;
+            /*transition: all 1s linear;*/
+        }
+
+        #minute_label,#hour_number,#hour_label{
+            display: inline-block;
+            position: absolute;
+            left: 50%;
+            top:50%;
+        }
+        #hour_label span,#minute_label span,#hour_number span{
+            position: absolute;
+            display: inline-block;
+            transform-origin: left center;
+            transform:translateX(-50%)  translateY(-50%);
+        }
+        #hour_label span,#minute_label span{
+            height: 2px;
+            width: 2px;
+            background: #000000;
+        }
+        #hour_label span{
+            width: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div id="clock">
+        <div id="panel">
+            <span id="hour"></span>
+            <span id="minute"></span>
+            <span id="second"></span>
+            <div id="hour_number"></div>
+            <div id="hour_label"></div>
+            <div id="minute_label"></div>
+
+        </div>
+    </div>
+</body>
+
+<script type="text/javascript">
+
+    var $hour = document.querySelector("#hour");
+    var $minute = document.querySelector("#minute");
+    var $second = document.querySelector("#second");
+    var $hour_label = document.querySelector("#hour_label");
+    var $minute_label = document.querySelector("#minute_label");
+    var $hour_number = document.querySelector("#hour_number");
+
+    insertHourNumber();
+    inserLabel($hour_label,1,12);
+    inserLabel($minute_label,1,60);
+
+    setInterval(intervalTask,1000);
+    function intervalTask(){
+        var now = new Date();
+        var hour = now.getHours();
+        var minute = now.getMinutes();
+        var second = now.getSeconds();
+
+        setClockPointerStatus(hour,minute,second);
+    }
+
+    function setClockPointerStatus(hour,minute,second){
+        var defaultRotate = 90;
+        var secondRotate = 360/60*second;
+        var minuteRotate = 360/60*minute;
+        var hourRotate = 360/12*hour;
+
+
+        setRoate($second,secondRotate);
+        setRoate($minute,minuteRotate);
+        setRoate($hour,hourRotate);
+
+        function setRoate($tag,rotate){
+            var realRotate = rotate - defaultRotate;
+
+            $tag.style.transform = "rotateZ("+realRotate+"deg)";
+        }
+    }
+
+    function insertHourNumber(){
+        var start = 1,end = 12;
+        var item;
+        var rotateDeg;
+        var radius = 200-15;
+
+        for(;start<=end;start++){
+            // PI 180度
+            rotateDeg =Math.PI/180*(360/12*start);
+            item = document.createElement("span");
+            item.innerHTML =start;
+            //setPosition
+            item.style.left = (Math.sin(rotateDeg)*radius)+"px";
+            item.style.top = (-Math.cos(rotateDeg)*radius)+"px";
+            $hour_number.appendChild(item);
+        }
+    }
+
+    function inserLabel($tag,start,end){
+        var item;
+        var rotateDeg;
+        var radius = 195;
+        var defaultDeg = 90;
+
+        for(;start<=end;start++){
+            // PI 180度
+            rotateDeg =Math.PI/180*(360/end*start);
+            item = document.createElement("span");
+
+            //setPosition
+            item.style.left = (Math.sin(rotateDeg)*radius)+"px";
+            item.style.top = (-Math.cos(rotateDeg)*radius)+"px";
+
+            //set rotate
+            item.style.transform = "rotateZ("+(rotateDeg/Math.PI*180-defaultDeg)+"deg)";
+            $tag.appendChild(item);
+        }
+    }
+
+</script>
+</html>

@@ -1,0 +1,56 @@
+
+#clock{
+    margin-top: 200px;
+    text-align: center;
+}
+#panel{
+    position: relative;
+    margin: 0 auto;
+    height: 400px;
+    width: 400px;
+    border: 1px solid #000;
+    border-radius: 200px;
+}
+#hour,#minute,#second{
+    display: inline-block;
+    position: absolute;
+    left: 50%;
+    top:50%;
+    background:#000;
+    transform-origin: left center;
+    transform: rotateZ(-90deg);
+}
+#hour{
+    width: 60px;
+    height:2px;
+}
+#minute{
+    width: 100px;
+    height: 2px;
+}
+#second{
+    width: 150px;
+    height: 2px;
+    /*transition: all 1s linear;*/
+}
+
+#minute_label,#hour_number,#hour_label{
+    display: inline-block;
+    position: absolute;
+    left: 50%;
+    top:50%;
+}
+#hour_label span,#minute_label span,#hour_number span{
+    position: absolute;
+    display: inline-block;
+    transform-origin: left center;
+    transform:translateX(-50%)  translateY(-50%);
+}
+#hour_label span,#minute_label span{
+    height: 2px;
+    width: 2px;
+    background: #000000;
+}
+#hour_label span{
+    width: 5px;
+}

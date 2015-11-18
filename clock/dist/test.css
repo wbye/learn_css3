@@ -1,0 +1,65 @@
+
+#clock{
+    margin-top: 200px;
+    text-align: center;
+}
+#panel{
+    position: relative;
+    margin: 0 auto;
+    height: 400px;
+    width: 400px;
+    border: 1px solid #000;
+    -webkit-border-radius: 200px;
+            border-radius: 200px;
+}
+#hour,#minute,#second{
+    display: inline-block;
+    position: absolute;
+    left: 50%;
+    top:50%;
+    background:#000;
+    -webkit-transform-origin: left center;
+        -ms-transform-origin: left center;
+            transform-origin: left center;
+    -webkit-transform: rotateZ(-90deg);
+        -ms-transform: rotate(-90deg);
+            transform: rotateZ(-90deg);
+}
+#hour{
+    width: 60px;
+    height:2px;
+}
+#minute{
+    width: 100px;
+    height: 2px;
+}
+#second{
+    width: 150px;
+    height: 2px;
+    /*transition: all 1s linear;*/
+}
+
+#minute_label,#hour_number,#hour_label{
+    display: inline-block;
+    position: absolute;
+    left: 50%;
+    top:50%;
+}
+#hour_label span,#minute_label span,#hour_number span{
+    position: absolute;
+    display: inline-block;
+    -webkit-transform-origin: left center;
+        -ms-transform-origin: left center;
+            transform-origin: left center;
+    -webkit-transform:translateX(-50%)  translateY(-50%);
+        -ms-transform:translateX(-50%)  translateY(-50%);
+            transform:translateX(-50%)  translateY(-50%);
+}
+#hour_label span,#minute_label span{
+    height: 2px;
+    width: 2px;
+    background: #000000;
+}
+#hour_label span{
+    width: 5px;
+}
